@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+{% for c in cards %}
+{{ c }}
+{% endfor %}
+<form id="createform" method="POST">
+    <h4>Name Your Card Set</h4>
+    <input type="text" name="name">
+    <h4>Level 1</h4>
+
+    <div id="supereasycards">
+        <input type="url" name="imageurl[]">
+        <input type="url" name="imageurl[]">
+    </div>
+    <h4>Level 2</h4>
+    <div id="easy">
+        <input type="url" name="imageurl[]">
+        <input type="url" name="imageurl[]">
+    </div>
+    <h4>Level 3</h4>
+    <div id="normal">
+        <input type="url" name="imageurl[]">
+        <input type="url" name="imageurl[]">
+        <input type="url" name="imageurl[]">
+        <input type="url" name="imageurl[]">
+    </div>
+    <h4>Level 4</h4>
+    <div id="hard">
+        <input type="url" name="imageurl[]">
+        <input type="url" name="imageurl[]">
+        <input type="url" name="imageurl[]">
+        <input type="url" name="imageurl[]">
+    </div>
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}
+
+{% block post_js %}
+
+
+{% endblock %}

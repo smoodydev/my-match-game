@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+    <button class="difficulty-btn" data-diff="2">Super Easy</button>
+    {% if cards.deck|length >=4  %}
+    <button class="difficulty-btn" data-diff="4">Easy</button>
+    {% endif %}
+    {% if cards.deck|length >=8  %}
+    
+    <button class="difficulty-btn" data-diff="8">Normal</button>
+    {% endif %}
+    {% if cards.deck|length >=12  %}
+    
+    <button class="difficulty-btn" data-diff="12">Hard</button>
+    {% endif %}
+</div>
+<div id="grid" class="grid">
+</div>
+
+{% endblock %}
+
+{% block post_js %}
+<script>
+    
+    let cardList = [{% for c in cards.deck %}"{{ c }}"{% if not loop.last %}, {% endif %} {% endfor %}]
+
+</script>
+
+<script src="{{ url_for('static', filename='js/match.js') }}"></script>
+
+{% endblock %}

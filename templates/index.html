@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+    <div>
+        <h1>Example Card Set</h1>
+        {% for d in demos %}
+        <h4>{{ d.name }}</h4>
+        <a href="{{ url_for('play_example', game_id=d.link) }}">Click me</a>
+        {% endfor %}
+    </div>
+    <div>
+        <h1>Made By You!</h1>
+        {% for card_set in custom_sets %}
+        <h4>{{ card_set.name }}</h4>
+        <a href="{{ url_for('play_created', game_id=card_set._id) }}">Click me</a>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block post_js %}
+
+
+{% endblock %}
+
